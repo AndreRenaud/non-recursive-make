@@ -1,5 +1,8 @@
 include build_rules.mk
 
+# Make sure we can access the various library include files directly
+CFLAGS += -Ilib1 -Ilib2
+
 default: prog1
 
 all: prog1 prog2

@@ -21,9 +21,6 @@ AR    = $(CROSS_COMPILE)ar
 LD    = $(CROSS_COMPILE)ld
 STRIP = $(CROSS_COMPILE)strip
 
-# Make sure we can access the various library include files directly
-CFLAGS += -Ilib1 -Ilib2
-
 CFLAGS+=-Werror -Wall -pipe
 ifeq "$(DEBUG)" ""
         CFLAGS += -O2
