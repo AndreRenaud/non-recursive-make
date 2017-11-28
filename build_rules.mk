@@ -24,7 +24,7 @@ STRIP = $(CROSS_COMPILE)strip
 # Make sure we can access the various library include files directly
 CFLAGS += -Ilib1 -Ilib2
 
-CFLAGS+= -Werror -Wall -pipe
+CFLAGS+=-Werror -Wall -pipe
 ifeq "$(DEBUG)" ""
         CFLAGS += -O2
 else
@@ -53,6 +53,7 @@ build/$(ARCH)/%.o : %.c
 	$(CC) $(CFLAGS) -c -o $@ $<
 
 build/$(ARCH)/%.dep: %.c
+# Don't build dependencies if this is a clean build
 ifneq ($(MAKECMDGOALS),clean)
 	echo "  DEP $<..."
 	mkdir -p $(dir $@)
