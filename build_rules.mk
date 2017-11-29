@@ -3,7 +3,7 @@ ARCH?=$(shell uname -m)
 ifeq "$(ARCH)" "arm"
 BUILDROOT?=$(shell readlink -f ../buildroot)
 PKG_CONFIG?=$(BUILDROOT)/output/host/usr/bin/pkg-config
-CROSS_COMPILE?=$(shell readlink -f ../arm-unknown-linux-gnueabi)/bin/arm-unknown-linux-gnueabi-
+CROSS_COMPILE?=$(BUILDROOT)/output/host/bin/arm-unknown-linux-gnueabi-
 UBOOT_DIR?=$(shell readlink -f ../u-boot)
 LINUX_DIR?=$(shell readlink -f ../linux)
 
